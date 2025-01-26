@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "GeneralSans-Regular", sans-serif;
+}
+
+/* Font Family GeneralSans */
+@font-face {
+  font-family: "GeneralSans-Regular";
+  src: url("/fonts/generalsans/GeneralSans-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Font Family Helvetica */
+@font-face {
+  font-family: "Helvetica-Bold";
+  src: url("/fonts/helvetica/Helvetica-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Font Family biliner */
+@font-face {
+  font-family: "Biliner Meclan";
+  src: url("/fonts/biliner/Biliner Meclan.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.blue-custom {
+  background: #de1bdf;
+  opacity: 0.34;
+  filter: blur(132px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  z-index: 0;
+}
+
+.bg-custom {
+  background-image: url("../public/assets/hero-bg.svg");
+}
+
+.bg-custom-two {
+  background-image: url("../public/assets/hero-bg-two.svg");
+}
+
+/* Animated border */
+.btn-border {
+  position: relative;
+  width: 100%;
+  border-radius: 37.1px;
+  isolation: isolate;
+  background-color: #3a8fff;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  overflow: hidden;
+}
+
+.btn-border::before,
+.btn-border::after {
+  content: "";
+  position: absolute;
+}
+.btn-border::before {
+  content: ""; /* Create content for the pseudo-element */
+  position: absolute;
+  top: 4%; /* Vertically center the line */
+  left: 50%; /* Center the rotation point */
+  transform-origin: left center; /* Set rotation origin to the left side of the pseudo-element */
+  width: 100%; /* Full width of the parent container */
+  height: 51px; /* Line thickness */
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+  z-index: -1; /* Ensure it's behind the btn-border content */
+  animation: btnBorder 8s linear infinite; /* Animate the rotation */
+}
+
+@keyframes btnBorder {
+  0% {
+    transform: rotateZ(0deg); /* Start at 0 degrees */
+  }
+  25% {
+    transform: rotateZ(90deg); /* Move to a quarter rotation */
+  }
+  50% {
+    transform: rotateZ(180deg); /* Halfway rotation */
+  }
+  75% {
+    transform: rotateZ(270deg); /* Three-quarter rotation */
+  }
+  100% {
+    transform: rotateZ(360deg); /* Full rotation */
+  }
+}
+
+.btn-border::after {
+  background-color: #3a8fff;
+  /* inset: 2px; */
+  border-radius: 37.1px;
+}
+
+/* stars orbit animation */
+@keyframes orbit {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+/* floating languages */
+.wJVBu {
+  overflow: visible !important;
+}
+
+@keyframes highlightStep {
+  0%,
+  25% {
+    background: #4f5164; /* Default background */
+    box-shadow: none;
+  }
+  30%,
+  75% {
+    background: linear-gradient(45deg, #3a8fff, #3b59ff); /* Glowing gradient */
+    box-shadow: 0 0 10px rgba(58, 143, 255, 0.6); /* Glow effect */
+  }
+  80%,
+  100% {
+    background: #4f5164; /* Return to default */
+    box-shadow: none;
+  }
+}
+
+/* Animated border */
+.card-border {
+  width: 100%;
+  isolation: isolate;
+  background-color: #0f0616;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  overflow: hidden;
+}
+
+.card-border::before,
+.card-border::after {
+  content: "";
+  position: absolute;
+}
+.card-border::before {
+  content: ""; /* Create content for the pseudo-element */
+  position: absolute;
+  top: 4%; /* Vertically center the line */
+  left: 50%; /* Center the rotation point */
+  transform-origin: left center; /* Set rotation origin to the left side of the pseudo-element */
+  width: 100%; /* Full width of the parent container */
+  height: 51px; /* Line thickness */
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+  z-index: -1; /* Ensure it's behind the card-border content */
+  animation: btnBorder 8s linear infinite; /* Animate the rotation */
+}
+
+.card-border::after {
+  background-color: #0f0616;
+  /* inset: 2px; */
+}
+
+/* stars orbit animation */
+@keyframes orbit {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
