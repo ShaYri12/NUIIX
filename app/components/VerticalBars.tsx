@@ -1,4 +1,3 @@
-// components/VerticalBars.tsx
 import { useEffect, useState } from "react";
 
 const VerticalBars: React.FC = () => {
